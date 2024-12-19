@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // What async function is basically await will wait untill the async function does his job. Otherwise if it wouldn't be async await function then the async function will run in background and rest all task will be performed 
+
+        // Await can be used inside an async function 
+        // async function getData(){
+        //     return new Promise((ressolve,reject)=>{
+        //         setTimeout(() => {
+        //             ressolve(455)
+        //         }, 3500);
+        //     })
+        // }
+
+        // Fetch API 
+        async function getData() {
+
+            // You can also make a post request this example is only for get request 
+            let x = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+            let data = await x.json();
+            console.log(data);
+            // return 455;  
+        }
+
+        async function main() {
+
+            console.log("Loading Modules");
+
+            console.log("Do something else");
+
+            console.log("Load Data");
+
+            let data = await getData()
+            console.log(data);
+
+            console.log("Process Data");
+
+            console.log("Task 2");
+        }
+
+        main();
+    </script>
+</body>
+
+</html>

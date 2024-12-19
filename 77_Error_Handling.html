@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let a = prompt("Enter First Number");
+        let b = prompt("Enter Second Number");
+
+        if ((isNaN(a)) || (isNaN(b))) {
+            // To show syntax error. I will show error to user
+            throw SyntaxError("Sorry this is not allowed");
+        }
+
+        // ParseInt is a function which convert string to integer 
+        let sum = parseInt(a) + parseInt(b);
+
+        // To handle inbuilt error we use try and catch what will happen is if error comes then catch will get execute and if not then try will get execute. Finally will be executed each time whethere try get execute or catch get execute. We use this to get our hands experience this error we will be getting 
+        try {
+            console.log(sum * x);
+        } catch (error) {
+            console.log("Error has come bro")
+        }
+        finally{
+            console.log("Files are closed");
+        }
+    </script>
+</body>
+
+</html>

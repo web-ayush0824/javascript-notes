@@ -1,0 +1,99 @@
+<!-- Access notes there are some other functions also  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- There are data attributes through which we can add custom attributes  -->
+        <div class="box red bg-green" data-createdBy="Ayush">Box</div>
+
+
+    </div>
+
+    <script>
+        // To get inner html of any tag 
+        console.log(document.querySelector(".container").innerHTML)
+
+        // To change iner html of a element 
+        // console.log(document.querySelector(".container").innerHTML="Hey I'm Ayush")
+
+        // TO get outer html of an tag 
+        console.log(document.querySelector(".container").outerHTML)
+
+        // To get tagname of an class 
+        console.log(document.querySelector(".container").tagName)
+
+        // TO get name of node. It is different from tagname in node all three text, comment and element 
+        console.log(document.querySelector(".container").nodeName)
+
+        // To get inner text of an element 
+        console.log(document.querySelector(".box").innerText)
+
+        // To get all attributes 
+        console.log(document.querySelector(".box").attributes)
+
+        // To check whether that element as that attribute or not
+        console.log(document.querySelector(".box").hasAttribute("style"))
+
+        // To get which attribute is present 
+        console.log(document.querySelector(".box").getAttribute("style"))
+
+        // To set the attribute 
+        console.log(document.querySelector(".box").setAttribute("style", "display:inline"))
+
+        // To remove the attribute 
+        console.log(document.querySelector(".box").removeAttribute("style"))
+
+        // To hide the element 
+        // console.log(document.querySelector(".box").hidden="true")
+
+
+        // To change any website in this world 
+        document.designMode = "on";
+
+        // To get custom attribute added on that element 
+        console.log(document.querySelector(".box").dataset);
+
+
+
+        // To create any new element through js 
+        // It will create an element 
+        let div = document.createElement("div");
+
+        // To add html to it 
+        div.innerHTML = "I have been created";
+
+        // To add attribute in that element 
+        div.setAttribute("class", "created");
+
+        // To add element to the body. By append we can see the element at last
+        document.querySelector(".box").append(div);
+
+        // 1. Appened:- Appened at end of the node. 
+        // 2. Prepend:- Prepend at start of node 
+        // 3. Before:- Insert before node 
+        // 4. After:- Insert After node 
+
+        // To get all class list related to box class 
+        console.log(document.querySelector(".box").classList);
+
+        // To add and remove a class in the box 
+        console.log(document.querySelector(".box").classList.add("test"));
+        console.log(document.querySelector(".box").classList.remove("red"));
+        // If class is applied then it will remove if not applied then it will apply 
+        console.log(document.querySelector(".box").classList.toggle("yellow"));
+        console.log("Hello");
+
+        // To get all classname of the box 
+        console.log(document.querySelector(".box").className);
+    </script>
+</body>
+
+</html>

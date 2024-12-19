@@ -1,0 +1,71 @@
+<!-- This is for Object Oriented Programming  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let obj = {
+            a:1,
+            b:"Ayush"
+        }
+        console.log(obj);
+
+        let animal = {
+            eats:true
+        }
+
+        let rabbit ={
+            jumps:true
+        }
+
+        // Proto refers to prototype. It means we can add more property to the object. It will inherit the property of animal. Prototype is nothing but adding more properties to our object.
+        rabbit.__proto__ = animal;
+
+
+        // We cannot achieve everything with help of prototype so that's why we create class. 
+        class Animal{
+            constructor(name){
+                // This keyword is a way to create properties in an object 
+                this.name=name
+                console.log("Object is created");
+            }
+
+            eats(){
+                console.log("Under eats function");
+            }
+            jumps(){
+                console.log("Under jumps function");
+            }
+        }
+
+        // By using extends keyword it will get all property of animal 
+        class Lion extends Animal{
+            constructor(name){
+
+                // by using super keyword then only you will be able to use this keyword again otherwise you will get error 
+                super(name);
+                console.log("Object is created and inside lion");
+            }
+
+            // Method overridding 
+            eats(){
+                console.log("Under eats function Lion");
+            }
+        }
+
+        let a = new Animal("Ayush");
+        console.log(a)
+
+        let l = new Lion("Parrot");
+        console.log(l);
+
+
+        // Getter and setter, instanceof see notes 
+    </script>
+</body>
+</html>

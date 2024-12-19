@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=q, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // ECMA Script is standard of js 
+
+        // Variable is a container which stores value. var is variable, a is identifier and  is value
+        var a=10;
+        var b=20;
+        console.log(a+b);
+
+        // To get type of data store in an variable 
+        console.log(typeof a);
+
+        // There are some rules while defining variables name like it should not start with number, variable name are case sensitive 
+
+
+        // Var Let Const
+        // 1. Var is global scope whereas let and const is local scope 
+        // 2. Var can be redeclared and updated within same scope 
+        // 3. Let can be updated but not redeclared 
+        // 4. const can neither be updated nor be redeclared
+        // 5. Var is initialized with undefined whereas let and const are not initialized 
+        // 6. Const must be initialized while declaration 
+
+
+        // Data Type:- They are of 2 types:-
+        // 1. Primitive Data Type:- which is inbuilt data type. They are of 7 types:- null(type of null is an object),number,string,boolean,symbol, undefined(delared with no value), bigint(To store big integer)
+
+
+        let x = "Ayush";
+        let y = 10;
+        let z= 3.55;
+        let e = true;
+        let f = undefined;
+        let g = null;
+        console.log(x,y,z,e,f,g)
+        console.log(typeof x,typeof y,typeof z,typeof e,typeof f,typeof g)
+
+
+        // 2. Objects:- which is created by user. To store multiple value in an variable 
+
+        // To create an object 
+        let obj = {
+            // Key:value pairs 
+            name:"Ayush",
+            age:20
+        }
+        console.log(obj);
+
+        // To change value in an object 
+        obj.age=50;
+        console.log(obj);
+    </script>
+</body>
+</html>

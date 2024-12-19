@@ -1,0 +1,118 @@
+<!-- Array - Collection of multiple data type. Arrays are mutable in nature. Type of array is an object  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arr = [1,2,3,4,5];
+        console.log(arr)
+        console.log(arr.length);
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+        console.log(arr[3]);
+        console.log(arr[4]);
+
+        // To change value of array 
+        arr[0]=200;
+        console.log(arr);
+
+
+        // Array Methods 
+
+        // To convert array to string 
+        console.log(arr.toString());
+
+        // To join all the elements of an array 
+        console.log(arr.join(" and "))
+
+        // To remove element from end 
+        console.log(arr.pop());
+        console.log(arr);
+
+        // To add element at last position 
+        console.log(arr.push(100));
+        console.log(arr);
+
+        // To remove first element 
+        console.log(arr.shift())
+        console.log(arr);
+
+        // To add first element 
+        console.log(arr.unshift(500))
+        console.log(arr);
+
+        // delete - element can be deleted from array from any position 
+        delete arr[0];
+
+        // To add multiple arrays and it returns a new array
+        let a1 = [1,4,8];
+        let a2 = [2,5,9];
+        let a3 = [7,6,1];
+        console.log(a2.concat(a2,a3));
+
+        // To sort an array 
+        console.log(a3.sort())
+
+        // it is used to add new or remove existing elements to an array 
+        // 2 is posiiton, 1 is no of elemen to remove or add, 50,26 is number of element add 
+        const num = [1,5,7,6];
+        console.log(num.splice(2,1,50,26));
+        console.log(num)
+
+        // To slice out piece from an array it returns a new array 
+        console.log(num.slice(2));
+
+        // To reverse an array 
+        console.log(num.reverse());
+
+
+        // For each loop - call the function once for each loop element 
+        let z = [1,5,8,9,3,4];
+        z.forEach((value,index,arr) => {
+            console.log(value,index,arr);
+        });
+        
+
+
+        // creates a new array by performing some operations 
+        let r = [1,2,8,5,9,10,15,50];
+        let new_r = r.map((value,index,arr)=>{
+            return value**2;
+        })
+        console.log(new_r);
+
+
+        // filters an array with values that passes the test and creates a new array. Return is important to add 
+        const greaterThanSeven = ((element)=>{
+            if(element>7){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+        console.log(r.filter(greaterThanSeven))
+
+
+        // Reduce an element to a single array 
+        let arr2 = [1,5,8,1];
+        const red = ((a,b)=>{
+            return a*b;
+        })
+        console.log(arr2.reduce(red));
+
+
+        // Array from used to create an array from any object 
+        console.log(Array.from("Harry"));
+    </script>
+</body>
+
+</html>

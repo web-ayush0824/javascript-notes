@@ -1,0 +1,90 @@
+<!-- A callback Function is a function passed into another function as an argument which is then invoked inside outer function to complete an action  -->
+
+<!--  JavaScript is synchronous by default, but it can also be asynchronous -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log("Hello 1");
+        console.log("Hello 2");
+
+
+        setTimeout(() => {
+            console.log("I'm inside Set Time Out");
+        }, 2000);
+
+        console.log("End");
+
+        // Callback 
+
+        const callback = (arg) => {
+            console.log(arg);
+        }
+
+        const loadScript = (src, callback) => {
+            let sc = document.createElement("script");
+            sc.src = src;
+            sc.onload = callback("Ayush");
+            document.head.append(sc)
+        }
+
+        loadScript("https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js", callback);
+
+        // Callback Hell or Pyramid of DOM :- When callback function are again calling callback function again and again and it becomes like hell. That's why promises are made 
+
+
+        // Promises - Solution to call back hell. Then catch is promises
+        // new Promise is a constructor. If promise get ressolved then "then" will be called and if promise gets rejected then "catch" will be called. Promises have 2 properties:- state(promise is pending or it is fullfilled) and result(promise completed)
+        let prom1 = new Promise((ressolve, reject) => {
+            let b = Math.random();
+            if (b < 0.5) {
+                reject("No random number was generated");
+            }
+            else {
+                setTimeout(() => {
+                    console.log("Yes I'm done");
+                    ressolve("Ayush");
+                }, 3000);
+            }
+        })
+
+        prom1.then((a) => {
+            console.log(a);
+        }).catch((err)=>{
+            console.log(err);
+        })
+
+        // In promises finally is also present which will be run at last 
+
+        // Promise chaining :- we can chain promises and make them pass the ressolved value to one another 
+
+        // Promise API mehtods:- There are 6 static methods:-
+
+        // ** Promise ressolved means it is done and settled means it is ressolved or it is rejected 
+
+
+        // 1. Promise.all(promises):- Waits for all promises to get ressolved and returns the array of there results. If any promise is failed it becomes the error and all other results are ignored 
+
+        // 2. Promise.allsettled(promise):- Waits for all promises to get settled and returns the results as an array of object with status and value 
+
+        // 3. Promise.race(promise):- Wait for first promise to settle and it's result/error become outcome 
+
+        // 4. Promise.any(promise):- Wait for the first promise to fulfill and it's result become the outcome. 
+
+        // 5. Promise.ressolve(value):- Make a ressolved promise with a value 
+
+        // 6. Promise.reject(err):- Make a rejected promise with given error 
+
+    </script>
+</body>
+
+</html>

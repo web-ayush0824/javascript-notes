@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 45px;
+            width: 50px;
+            background-color: red;
+            border: 2px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+    </div>
+
+    <script>
+        console.log("Hello World");
+
+        // To get all child of the body tag 
+        // Text node is a space which is available in our structure. There are 3 nodes:- text(spaces), comment, element node(tag)
+        console.log(document.body.childNodes)
+
+        // To get all child nodes. only element node you will get
+        console.log(document.body.children);
+
+        // To get second element of the body child 
+        console.log(document.body.childNodes[1])
+
+        // To get first child of the body 
+        console.log(document.body.firstChild)
+
+        // To get last node of the body 
+        console.log(document.body.lastChild)
+
+        // To get first element child instead of a text node 
+        console.log(document.body.firstElementChild)
+
+        // To get last element child instead of a text node 
+        console.log(document.body.firstElementChild.parentElement)
+
+        // pervious element sibling and next element sibling to get siblings of element 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            height: 45px;
+            width: 45px;
+            border: 2px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">I'm a box 1</div>
+        <div class="box">I'm a box 2</div>
+        <div class="box" id="single">I'm a box 3</div>
+        <div class="box">I'm a box 4</div>
+        <div class="box">I'm a box 5</div>
+        <div class="box">I'm a box 6</div>
+    </div>
+
+    <script>
+
+        // To get element by class name 
+        let box = document.getElementsByClassName("box");
+        console.log(box);
+        box[1].style.backgroundColor="red";
+
+
+        // To get element by id 
+        document.getElementById("single").style.backgroundColor="yellow"
+
+        // It will select first box 
+        document.querySelector(".box").style.backgroundColor="green";
+
+        // It will return all html element with class box 
+        document.querySelectorAll(".box").forEach(e=>{
+            console.log(e);
+            e.style.backgroundColor="orange"
+        })
+
+        // To get element by tag name 
+        document.getElementsByTagName("div")
+
+
+        // matches, closest, contains 
+    </script>
+</body>
+</html>
